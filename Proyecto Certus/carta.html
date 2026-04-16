@@ -23,23 +23,34 @@
     </nav>
     <main>
       <article>
-        <h2> Catalogo de postres </h2>
+  <h2> Catalogo de postres </h2>
 
-        <h3> Cheesecake </h3>
-<img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187" width="250">
-<p>Delicioso cheesecake cremoso</p>
-<button onclick="agregarAlCarrito('Cheesecake', 20)">Agregar al carrito</button>
+  <div class="grid-postres">
 
-        <h3> Brownies </h3>
-<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c" width="250">
-<p>Brownies de chocolate con textura suave.</p>
-<button onclick="agregarAlCarrito('Brownies', 15)">Agregar al carrito</button>
-         
-     <h3> Muffyns </h3>
-<img src="https://images.unsplash.com/photo-1587668178277-295251f900ce" width="250">
-<p>Muffyns decorados para cualquier ocasion.</p>
-<button onclick="agregarAlCarrito('Muffyns', 10)">Agregar al carrito</button>
-     </article>  
+    <div class="postre">
+      <h3>Cheesecake</h3>
+      <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187">
+      <p>Delicioso cheesecake cremoso</p>
+      <button onclick="agregarAlCarrito('Cheesecake', 20)">Agregar</button>
+    </div>
+
+    <div class="postre">
+      <h3>Brownies</h3>
+      <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+      <p>Brownies de chocolate con textura suave.</p>
+      <button onclick="agregarAlCarrito('Brownies', 15)">Agregar</button>
+    </div>
+
+    <div class="postre">
+      <h3>Muffyns</h3>
+      <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce">
+      <p>Muffyns decorados para cualquier ocasión.</p>
+      <button onclick="agregarAlCarrito('Muffyns', 10)">Agregar</button>
+    </div>
+
+  </div>
+
+</article> 
        <h2>Carrito</h2>
 <ul id="carrito"></ul>
 <p id="total"></p>
