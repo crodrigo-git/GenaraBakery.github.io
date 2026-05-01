@@ -1,38 +1,62 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>El título de mi página</title>
-     <link rel="stylesheet" href="styless.css">
-  </head>
-  <body>
-    <header>
-         <img src="imagenes/ola.exe.jpeg" class="banner-img">
-    </header>
-    <nav>
-      <ul>
-        <li><a href="Inicio.html">Inicio</a></li>
-        <li><a href="equipo.html">Nuestro equipo</a></li>
-        <li><a href="carta.html">Carta</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul> 
-      <form>
-        <input type="search" name="q" placeholder="Buscar" />
-        <input type="submit" value="¡Vamos!" />
-      </form>
-    </nav>
-    <main>
-      <article>
-        <h2>Nuestro Origen  </h2>
-    
-        <h3>Buscamos representar a través de los postres el amor, la tradición y los momentos que nos unen como familia. 
-        La raíz de todo está en mi bisabuelita. Ella es nuestra mayor fuente de inspiración. Una mujer trabajadora, luchadora y fuerte que siempre supo salir adelante, sin importar las dificultades. Su ejemplo nos enseñó que con esfuerzo y cariño, todo se puede lograr.
-       </h3>
-        <h2>Que Buscamos</h2>
-        <h3>Buscamos endulzar tus momentos importantes con la misma dedicación y amor que ella nos dejó. No vendemos solo postres, compartimos herencia.</h3>
-    </main>
-    <footer>
-      <p>© 2026 Genara Bakery</p>
-    </footer>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Nuestro equipo - Genara Bakery</title>
+  <link rel="stylesheet" href="styless.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="imagenes/ola.exe.jpeg" class="logo" alt="Genara Bakery">
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="Inicio.html">Inicio</a></li>
+      <li><a href="equipo.html">Nuestro equipo</a></li>
+      <li><a href="carta.html">Carta</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul> 
+
+    <form>
+      <input type="search" name="q" placeholder="Buscar" />
+      <input type="submit" value="¡Vamos!" />
+    </form>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="equipo fade-in">
+
+    <section class="bloque slide-in">
+      <h2>Nuestro Origen</h2>
+      <p>
+        Buscamos representar a través de los postres el amor, la tradición y los momentos que nos unen como familia.
+        Nuestra mayor inspiración es nuestra bisabuelita, una mujer fuerte, trabajadora y luchadora.
+      </p>
+    </section>
+
+    <section class="bloque slide-in">
+      <h2>Qué buscamos</h2>
+      <p>
+        Endulzar tus momentos importantes con dedicación y amor.
+        No vendemos solo postres, compartimos una herencia familiar llena de historia.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Genara Bakery</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/equipo.js"></script>
+
+</body>
 </html>

@@ -5,9 +5,13 @@
     <title>Genara Bakery</title>
     <link rel="stylesheet" href="styless.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ICONOS (para Instagram) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
   
   <body>
+
     <header>
       <img src="imagenes/ola.exe.jpeg" class="logo" alt="Logo de Genara Bakery">
     </header>
@@ -26,22 +30,50 @@
       </form>
     </nav>
     
-    <main>
-      <div class="contenedor-boton">
-        <a href="https://www.instagram.com/genara.bakery/" class="boton-pedido">Pide aquí</a>
-      </div>
-      
-      <article>
-        <h1>Bienvenidos a nuestra tienda de postres</h1>
+    <main class="fade-in">
 
-        <p>En Genara Bakery ofrecemos postres caseros preparados con ingredientes de alta calidad para satisfacer a nuestros clientes</p>
- 
-        <p>Nuestros postres son ideales para cumpleaños, reuniones familiares y eventos especiales</p>
-      </article>
+      <!-- MENSAJE -->
+      <div id="mensaje-bienvenida" class="mensaje"></div>
+
+      <!-- HERO -->
+      <section class="hero">
+
+        <div class="hero-texto">
+          <h1>🍰 Bienvenidos a tu tienda de postres favorita</h1>
+
+          <p>
+            En <strong>Genara Bakery</strong> creamos postres caseros con ingredientes 
+            seleccionados, brindando sabores únicos para cada ocasión especial.
+          </p>
+
+          <p>
+            Disfruta de nuestras deliciosas opciones para cumpleaños, reuniones y celebraciones.
+          </p>
+
+          <!-- BOTONES -->
+          <div class="botones">
+            <a href="carta.html" class="boton-pedido">Ver nuestros postres</a>
+
+            <a href="https://www.instagram.com/genara.bakery/" target="_blank" class="boton-instagram">
+              <i class="fab fa-instagram"></i> Pide por Instagram
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-img">
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="Postres">
+        </div>
+
+      </section>
+
     </main>
           
     <footer>
       <p>© 2026 Genara Bakery</p>
     </footer>
+
+    <script src="js/index.js"></script>
+
   </body>
 </html>
+

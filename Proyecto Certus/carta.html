@@ -1,95 +1,134 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Genara.Bakery</title>
-     <link rel="stylesheet" href="styless.css">
-  </head>
-  <body>
-    <header>
-      <img src="imagenes/ola.exe.jpeg" class="banner-img">
-    </header>
-    <nav>
-      <ul>
-        <li><a href="Inicio.html">Inicio</a></li>
-        <li><a href="equipo.html">Nuestro equipo</a></li>
-        <li><a href="carta.html">Carta</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul> 
-      <form>
-        <input type="search" name="q" placeholder="Buscar" />
-        <input type="submit" value="¡Vamos!" />
-      </form>
-    </nav>
-    <main>
-      <article>
-  <h2> Catalogo de postres </h2>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Genara Bakery - Carta</title>
+  <link rel="stylesheet" href="styless.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="grid-postres">
+  <!-- ICONOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 
-    <div class="postre">
-      <h3>Cheesecake</h3>
-      <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187">
-      <p>Delicioso cheesecake cremoso</p>
-      <button onclick="agregarAlCarrito('Cheesecake', 20)">Agregar</button>
+<body>
+
+<header>
+  <img src="imagenes/ola.exe.jpeg" class="logo" alt="Logo de Genara Bakery">
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="equipo.html">Nuestro equipo</a></li>
+    <li><a href="carta.html">Carta</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul> 
+</nav>
+
+<main class="fade-in">
+
+  <h1 style="text-align:center; margin-bottom: 30px;">
+    🍰 Nuestro catálogo de postres
+  </h1>
+
+  <!-- 🍫 CHOCOLATE -->
+  <section class="categoria">
+    <h2>🍫 Chocolate</h2>
+
+    <div class="grid-postres">
+
+      <div class="postre">
+        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187">
+        <h3>Cheesecake de chocolate</h3>
+        <p>S/ 20</p>
+        <button onclick="agregarAlCarrito('Cheesecake chocolate', 20); animarBoton(this)">Agregar</button>
+      </div>
+
+      <div class="postre">
+        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+        <h3>Brownies</h3>
+        <p>S/ 15</p>
+        <button onclick="agregarAlCarrito('Brownies', 15); animarBoton(this)">Agregar</button>
+      </div>
+
+      <div class="postre">
+        <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75">
+        <h3>Torta de chocolate</h3>
+        <p>S/ 25</p>
+        <button onclick="agregarAlCarrito('Torta chocolate', 25); animarBoton(this)">Agregar</button>
+      </div>
+
     </div>
+  </section>
 
-    <div class="postre">
-      <h3>Brownies</h3>
-      <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
-      <p>Brownies de chocolate con textura suave.</p>
-      <button onclick="agregarAlCarrito('Brownies', 15)">Agregar</button>
+  <!-- 🍓 FRUTAS -->
+  <section class="categoria">
+    <h2>🍓 Frutales</h2>
+
+    <div class="grid-postres">
+
+      <div class="postre">
+        <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2">
+        <h3>Cheesecake de fresa</h3>
+        <p>S/ 18</p>
+        <button onclick="agregarAlCarrito('Cheesecake fresa', 18); animarBoton(this)">Agregar</button>
+      </div>
+
+      <div class="postre">
+        <img src="https://images.unsplash.com/photo-1559628233-100c798642d4">
+        <h3>Pie de limón</h3>
+        <p>S/ 15</p>
+        <button onclick="agregarAlCarrito('Pie de limón', 15); animarBoton(this)">Agregar</button>
+      </div>
+
+      <div class="postre">
+        <img src="https://images.unsplash.com/photo-1519869325930-281384150729">
+        <h3>Torta de maracuyá</h3>
+        <p>S/ 22</p>
+        <button onclick="agregarAlCarrito('Torta maracuyá', 22); animarBoton(this)">Agregar</button>
+      </div>
+
     </div>
+  </section>
 
-    <div class="postre">
-      <h3>Muffyns</h3>
-      <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce">
-      <p>Muffyns decorados para cualquier ocasión.</p>
-      <button onclick="agregarAlCarrito('Muffyns', 10)">Agregar</button>
+  <!-- 🎂 ESPECIALES -->
+  <section class="categoria">
+    <h2>🎂 Especiales</h2>
+
+    <div class="grid-postres">
+
+      <div class="postre">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+        <h3>Torta personalizada</h3>
+        <p>Desde S/ 30</p>
+        <button onclick="agregarAlCarrito('Torta personalizada', 30); animarBoton(this)">Agregar</button>
+      </div>
+
+      <div class="postre">
+        <img src="https://images.unsplash.com/photo-1607478900766-efe13248b125">
+        <h3>Mini postres mixtos</h3>
+        <p>S/ 12</p>
+        <button onclick="agregarAlCarrito('Mini postres', 12); animarBoton(this)">Agregar</button>
+      </div>
+
     </div>
+  </section>
 
+  <!-- 🛒 CARRITO -->
+  <div style="margin-top: 50px;">
+    <h2>🛒 Carrito</h2>
+    <ul id="carrito"></ul>
+    <h3>Total: S/ <span id="total">0</span></h3>
   </div>
 
-</article> 
-       <h2>Carrito</h2>
-<ul id="carrito"></ul>
-<p id="total"></p>
-    </main>
-    <footer>
-      <p> © 2026 Genara Bakery </p>
-    </footer>
-  <script>
-let carrito = [];
+</main>
 
-function agregarAlCarrito(nombre, precio) {
-  carrito.push({ nombre, precio });
-  mostrarCarrito();
-}
+<footer>
+  <p>© 2026 Genara Bakery</p>
+</footer>
 
-function eliminarProducto(index) {
-  carrito.splice(index, 1);
-  mostrarCarrito();
-}
+<script src="js/carta.js"></script>
 
-function mostrarCarrito() {
-  let lista = document.getElementById("carrito");
-  let totalTexto = document.getElementById("total");
-
-  lista.innerHTML = "";
-  let total = 0;
-
-  carrito.forEach((producto, index) => {
-    let item = document.createElement("li");
-    item.innerHTML = `
-      ${producto.nombre} - S/ ${producto.precio}
-      <button onclick="eliminarProducto(${index})">❌</button>
-    `;
-    lista.appendChild(item);
-    total += producto.precio;
-  });
-
-  totalTexto.textContent = "Total: S/ " + total;
-}
-</script>
-  </body>
+</body>
 </html>
+
