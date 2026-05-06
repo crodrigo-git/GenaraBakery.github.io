@@ -27,104 +27,149 @@
 
 <main class="fade-in">
 
-  <h1 style="text-align:center; margin-bottom: 30px;">
-    🍰 Nuestro catálogo de postres
-  </h1>
+<h1 style="text-align:center; margin-bottom: 30px;">
+ Nuestra carta de postres🍰
+</h1>
 
-  <!-- 🍫 CHOCOLATE -->
-  <section class="categoria">
-    <h2>🍫 Chocolate</h2>
+<!-- 🍪 DULCES -->
+<section class="categoria">
+<h2>🍪 Dulces</h2>
 
-    <div class="grid-postres">
+<div id="mensaje-carta" class="mensaje-carta">
+  🍰 Elige tu postre favorito
+</div>
 
-      <div class="postre">
-        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187">
-        <h3>Cheesecake de chocolate</h3>
-        <p>S/ 20</p>
-        <button onclick="agregarAlCarrito('Cheesecake chocolate', 20); animarBoton(this)">Agregar</button>
-      </div>
+<div class="grid-postres">
 
-      <div class="postre">
-        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
-        <h3>Brownies</h3>
-        <p>S/ 15</p>
-        <button onclick="agregarAlCarrito('Brownies', 15); animarBoton(this)">Agregar</button>
-      </div>
+<div class="postre">
+<img src="imagenes/postres/alfajores-de-chocolate.png">
+<h3>Alfajores de chocolate</h3>
+<p>S/ 10</p>
+<button onclick="agregarAlCarrito('Alfajores chocolate',10); animarBoton(this)">Agregar</button>
+</div>
 
-      <div class="postre">
-        <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75">
-        <h3>Torta de chocolate</h3>
-        <p>S/ 25</p>
-        <button onclick="agregarAlCarrito('Torta chocolate', 25); animarBoton(this)">Agregar</button>
-      </div>
+<div class="postre">
+<img src="imagenes/postres/alfajores-de-maicena.png">
+<h3>Alfajores de maicena</h3>
+<p>S/ 10</p>
+<button onclick="agregarAlCarrito('Alfajores maicena',10); animarBoton(this)">Agregar</button>
+</div>
 
-    </div>
-  </section>
+<div class="postre">
+<img src="imagenes/postres/galletas-de-chocolate.png">
+<h3>Galletas de chocolate</h3>
+<p>S/ 10</p>
+<button onclick="agregarAlCarrito('Galletas chocolate',10); animarBoton(this)">Agregar</button>
+</div>
 
-  <!-- 🍓 FRUTAS -->
-  <section class="categoria">
-    <h2>🍓 Frutales</h2>
+<div class="postre">
+<img src="imagenes/postres/muffins-de-chocolate.png">
+<h3>Muffins de chocolate</h3>
+<p>S/ 7</p>
+<button onclick="agregarAlCarrito('Muffins chocolate',7); animarBoton(this)">Agregar</button>
+</div>
 
-    <div class="grid-postres">
+<div class="postre">
+<img src="imagenes/postres/muffins-dechispas-pecanas.png">
+<h3>Muffins con chispas</h3>
+<p>S/ 7</p>
+<button onclick="agregarAlCarrito('Muffins chispas',7); animarBoton(this)">Agregar</button>
+</div>
 
-      <div class="postre">
-        <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2">
-        <h3>Cheesecake de fresa</h3>
-        <p>S/ 18</p>
-        <button onclick="agregarAlCarrito('Cheesecake fresa', 18); animarBoton(this)">Agregar</button>
-      </div>
+</div>
+</section>
 
-      <div class="postre">
-        <img src="https://images.unsplash.com/photo-1559628233-100c798642d4">
-        <h3>Pie de limón</h3>
-        <p>S/ 15</p>
-        <button onclick="agregarAlCarrito('Pie de limón', 15); animarBoton(this)">Agregar</button>
-      </div>
+<!-- 🧀 SALADOS -->
+<section class="categoria">
+<h2>🧀 Salados</h2>
 
-      <div class="postre">
-        <img src="https://images.unsplash.com/photo-1519869325930-281384150729">
-        <h3>Torta de maracuyá</h3>
-        <p>S/ 22</p>
-        <button onclick="agregarAlCarrito('Torta maracuyá', 22); animarBoton(this)">Agregar</button>
-      </div>
+<div class="grid-postres">
 
-    </div>
-  </section>
+<div class="postre">
+<img src="imagenes/postres/empanadas-de-queso.png">
+<h3>Empanadas de queso</h3>
+<p>S/ 12</p>
+<button onclick="agregarAlCarrito('Empanadas queso',12); animarBoton(this)">Agregar</button>
+</div>
 
-  <!-- 🎂 ESPECIALES -->
-  <section class="categoria">
-    <h2>🎂 Especiales</h2>
+<div class="postre">
+<img src="imagenes/postres/enrollados-de-queso.png">
+<h3>Enrollados de queso</h3>
+<p>S/ 10</p>
+<button onclick="agregarAlCarrito('Enrollados queso',10); animarBoton(this)">Agregar</button>
+</div>
 
-    <div class="grid-postres">
+<div class="postre">
+<img src="imagenes/postres/galletas-de-avena.png">
+<h3>Galletas de avena</h3>
+<p>S/ 10</p>
+<button onclick="agregarAlCarrito('Galletas avena',10); animarBoton(this)">Agregar</button>
+</div>
 
-      <div class="postre">
-        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
-        <h3>Torta personalizada</h3>
-        <p>Desde S/ 30</p>
-        <button onclick="agregarAlCarrito('Torta personalizada', 30); animarBoton(this)">Agregar</button>
-      </div>
+</div>
+</section>
 
-      <div class="postre">
-        <img src="https://images.unsplash.com/photo-1607478900766-efe13248b125">
-        <h3>Mini postres mixtos</h3>
-        <p>S/ 12</p>
-        <button onclick="agregarAlCarrito('Mini postres', 12); animarBoton(this)">Agregar</button>
-      </div>
+<!-- 🍓 SABORES A FRUTA -->
+<section class="categoria">
+<h2>🍓 Sabores a fruta</h2>
 
-    </div>
-  </section>
+<div class="grid-postres">
 
-  <!-- 🛒 CARRITO -->
-  <div style="margin-top: 50px;">
-    <h2>🛒 Carrito</h2>
-    <ul id="carrito"></ul>
-    <h3>Total: S/ <span id="total">0</span></h3>
-  </div>
+<div class="postre">
+<img src="imagenes/postres/galletas-de-limon.png">
+<h3>Galletas de limón</h3>
+<p>S/ 10</p>
+<button onclick="agregarAlCarrito('Galletas limon',10); animarBoton(this)">Agregar</button>
+</div>
+
+<div class="postre">
+<img src="imagenes/postres/muffins-de-manzana.png">
+<h3>Muffins de manzana</h3>
+<p>S/ 7</p>
+<button onclick="agregarAlCarrito('Muffins manzana',7); animarBoton(this)">Agregar</button>
+</div>
+
+<div class="postre">
+<img src="imagenes/postres/muffins-de-platano.png">
+<h3>Muffins de plátano</h3>
+<p>S/ 7</p>
+<button onclick="agregarAlCarrito('Muffins platano',7); animarBoton(this)">Agregar</button>
+</div>
+
+<div class="postre">
+<img src="imagenes/postres/tarta-de-manzana-2.png">
+<h3>Tarta de manzana</h3>
+<p>S/ 25</p>
+<button onclick="agregarAlCarrito('Tarta manzana',25); animarBoton(this)">Agregar</button>
+</div>
+
+<div class="postre">
+<img src="imagenes/postres/mini-tartas-de-manzana.png">
+<h3>Mini tartas de manzana</h3>
+<p>S/ 15</p>
+<button onclick="agregarAlCarrito('Mini tartas',15); animarBoton(this)">Agregar</button>
+</div>
+
+</div>
+</section>
 
 </main>
 
+<!-- 🛒 CARRITO LATERAL -->
+<aside class="carrito-lateral">
+  <h2>🛒 Carrito</h2>
+  <ul id="carrito"></ul>
+  <h3>Total: S/ <span id="total">0</span></h3>
+
+  <button class="btn-pagar">
+    💳 Pagar
+  </button>
+</aside>
+
+<div id="mensaje" class="mensaje"></div>
+
 <footer>
-  <p>© 2026 Genara Bakery</p>
+<p>© 2026 Genara Bakery</p>
 </footer>
 
 <script src="js/carta.js"></script>

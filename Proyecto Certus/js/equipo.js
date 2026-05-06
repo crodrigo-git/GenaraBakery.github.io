@@ -1,23 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // 🔥 1. Mensaje dinámico al entrar a la página
+  // 🔥 1. Mensaje en consola (evento DOMContentLoaded)
   console.log("💛 Página de equipo cargada correctamente");
 
-  // 🔥 2. Animación extra al cargar (refuerza el CSS)
+  // 🔥 2. Animación de bloques
   const bloques = document.querySelectorAll(".bloque");
 
-  bloques.forEach((bloque, index) => {
-    bloque.style.opacity = "0";
-    bloque.style.transform = "translateY(20px)";
+  // CONDICIONAL
+  if (bloques.length > 0) {
 
-    setTimeout(() => {
-      bloque.style.transition = "0.8s ease";
-      bloque.style.opacity = "1";
-      bloque.style.transform = "translateY(0)";
-    }, index * 300);
-  });
+    bloques.forEach((bloque, index) => {
 
-  // 🔥 3. Mensaje interactivo opcional (si quieres usar botón después)
+      bloque.style.opacity = "0";
+      bloque.style.transform = "translateY(20px)";
+
+      setTimeout(() => {
+        bloque.style.transition = "0.8s ease";
+        bloque.style.opacity = "1";
+        bloque.style.transform = "translateY(0)";
+      }, index * 300);
+
+    });
+
+  }
+
+  // 🔥 3. Mensaje flotante
   const mensaje = document.createElement("div");
 
   mensaje.textContent = "💛 Somos un equipo que trabaja con amor en cada postre";
@@ -34,14 +41,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.body.appendChild(mensaje);
 
-  // Mostrar mensaje al pasar 2 segundos
+  // 🔥 4. Mostrar mensaje con lógica
   setTimeout(() => {
-    mensaje.style.display = "block";
 
-    // ocultar después de 3 segundos
-    setTimeout(() => {
-      mensaje.style.display = "none";
-    }, 3000);
+    // OPERADOR TERNARIO
+    let mostrar = (mensaje !== null) ? true : false;
+
+    if (mostrar === true) {
+
+      mensaje.style.display = "block";
+
+      setTimeout(() => {
+        mensaje.style.display = "none";
+      }, 3000);
+
+    }
 
   }, 2000);
 

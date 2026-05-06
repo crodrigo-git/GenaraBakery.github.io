@@ -9,54 +9,56 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="imagenes/ola.exe.jpeg" class="logo" alt="Genara Bakery">
-  </header>
+<!-- HEADER -->
+<header>
+  <img src="imagenes/ola.exe.jpeg" class="logo" alt="Genara Bakery">
+</header>
 
-  <!-- NAV -->
-  <nav>
-    <ul>
-      <li><a href="Inicio.html">Inicio</a></li>
-      <li><a href="equipo.html">Nuestro equipo</a></li>
-      <li><a href="carta.html">Carta</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul> 
+<!-- NAV -->
+<nav>
+  <ul>
+    <!-- 🔴 CORRECCIÓN IMPORTANTE -->
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="equipo.html">Nuestro equipo</a></li>
+    <li><a href="carta.html">Carta</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
 
-    <form>
-      <input type="search" name="q" placeholder="Buscar" />
-      <input type="submit" value="¡Vamos!" />
-    </form>
-  </nav>
+  <!-- EVENTO -->
+  <form onsubmit="return false;">
+    <input type="search" id="busquedaEquipo" placeholder="Buscar..." />
+    <input type="submit" value="¡Vamos!" onclick="buscarEquipo()" />
+  </form>
+</nav>
 
-  <!-- MAIN -->
-  <main class="equipo fade-in">
+<!-- MAIN -->
+<main class="equipo fade-in">
 
-    <section class="bloque slide-in">
-      <h2>Nuestro Origen</h2>
-      <p>
-        Buscamos representar a través de los postres el amor, la tradición y los momentos que nos unen como familia.
-        Nuestra mayor inspiración es nuestra bisabuelita, una mujer fuerte, trabajadora y luchadora.
-      </p>
-    </section>
+  <section class="bloque slide-in" onmouseover="resaltar(this)" onmouseout="normal(this)">
+    <h2>Nuestro Origen</h2>
+    <p>
+      Buscamos representar a través de los postres el amor, la tradición y los momentos que nos unen como familia.
+      Nuestra mayor inspiración es nuestra bisabuelita, una mujer fuerte, trabajadora y luchadora.
+    </p>
+  </section>
 
-    <section class="bloque slide-in">
-      <h2>Qué buscamos</h2>
-      <p>
-        Endulzar tus momentos importantes con dedicación y amor.
-        No vendemos solo postres, compartimos una herencia familiar llena de historia.
-      </p>
-    </section>
+  <section class="bloque slide-in" onmouseover="resaltar(this)" onmouseout="normal(this)">
+    <h2>Qué buscamos</h2>
+    <p>
+      Endulzar tus momentos importantes con dedicación y amor.
+      No vendemos solo postres, compartimos una herencia familiar llena de historia.
+    </p>
+  </section>
 
-  </main>
+</main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Genara Bakery</p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Genara Bakery</p>
+</footer>
 
-  <!-- JS -->
-  <script src="js/equipo.js"></script>
+<!-- JS -->
+<script src="js/equipo.js"></script>
 
 </body>
 </html>
