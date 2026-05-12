@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Contacto - Genara Bakery</title>
+  <link rel="stylesheet" href="styless.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ICONOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+  <img src="imagenes/ola.exe.jpeg" class="logo" alt="Logo Genara Bakery">
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="equipo.html">Nuestro equipo</a></li>
+    <li><a href="carta.html">Carta</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul> 
+</nav>
+
+<main class="fade-in">
+
+  <!-- 🔥 SECCIÓN SUPERIOR (WHATSAPP + TITULO) -->
+  <section class="contacto-top">
+
+    <h2>📩 Contáctanos</h2>
+
+    <a href="https://wa.me/51987654321" target="_blank" class="boton-whatsapp">
+      <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+    </a>
+
+  </section>
+
+  <!-- 🔥 PRESENTACIÓN -->
+  <h3 class="titulo-formulario">Realiza tu pedido aquí</h3>
+
+  <!-- 🔥 FORMULARIO -->
+  <div class="form-container">
+
+    <form id="formulario" onsubmit="return false;">
+
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+
+      <label for="correo">Correo:</label>
+      <input type="email" id="correo" placeholder="ejemplo@email.com" required>
+
+      <label for="celular">Celular:</label>
+      <input type="tel" id="celular" placeholder="Ej: 987654321" required>
+
+      <label for="postre">¿Qué postre te interesa?</label>
+      <select id="postre" required>
+        <option value="">Selecciona una opción</option>
+        <option>Alfajores</option>
+        <option>Muffins</option>
+        <option>Empanadas</option>
+        <option>Otro</option>
+      </select>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+
+      <button type="submit" id="btnEnviar" onclick="enviarFormulario()">Enviar mensaje</button>
+
+    </form>
+
+  </div>
+
+  <div id="mensaje-exito" class="mensaje"></div>
+
+</main>
+ <footer class="footer">
+   <div class="footer-contenido">
+
+    <!-- LOGO -->
+    <div class="footer-col">
+      <h2>Genara Bakery</h2>
+
+      <p>
+        Dedicados a crear postres artesanales llenos de sabor,
+        tradición y amor en cada detalle.
+      </p>
+
+      <div class="redes">
+        
+      </div>
+    </div>
+
+    <!-- MENÚ -->
+   <div class="footer-col">
+      <h3>Servicios que ofrecemos</h3>
+
+      <a>Pedidos personalizados</a>
+      <a>Eventos</a>
+      <a>Postres artesanales</a>
+      <a>Delivery</a>
+    </div>
+
+    <!-- SERVICIOS -->
+    <div class="footer-col">
+      <h3>Servicios que ofrecemos</h3>
+
+      <a>Pedidos personalizados</a>
+      <a>Eventos</a>
+      <a>Postres artesanales</a>
+      <a>Delivery</a>
+    </div>
+
+    <!-- BOLETÍN -->
+    <div class="footer-col">
+      <h3>Boletín</h3>
+
+      <p>Recibe noticias y promociones especiales.</p>
+
+      <input type="email" placeholder="Tu correo">
+
+      <button>Suscribirse</button>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Genara Bakery - Todos los derechos reservados</p>
+
+    <a href="#">Volver arriba ↑</a>
+  </div>
+
+  </footer>
+
+<script src="js/contacto.js"></script>
+
+</body>
+</html>
+
