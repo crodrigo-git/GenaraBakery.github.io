@@ -12,22 +12,22 @@ form.addEventListener("submit", function(e) {
   let postre = document.getElementById("postre").value;
   let mensaje = document.getElementById("mensaje").value;
 
-  // 🔥 VALIDACIÓN COMPLETA (condicional + operadores)
+  //  VALIDACIÓN COMPLETA (condicional + operadores)
   if (nombre === "" || correo === "" || celular === "" || postre === "" || mensaje === "") {
     alert("⚠️ Completa todos los campos");
     return;
   }
 
-  // 🔥 VALIDACIÓN EXTRA
+  //  VALIDACIÓN EXTRA
   if (celular.length < 9) {
     alert("⚠️ El número debe tener al menos 9 dígitos");
     return;
   }
 
-  // 🔥 OPERADOR TERNARIO
+  // OPERADOR TERNARIO
   let tipoPostre = (postre === "Otro") ? "personalizado" : postre;
 
-  // 🔥 ANIMACIÓN BOTÓN
+  // ANIMACIÓN BOTÓN
   boton.textContent = "Enviando...";
   boton.disabled = true;
 
