@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago - Genara Bakery</title>
+  <link rel="stylesheet" href="styless.css"> <!-- Usa tu mismo estilo -->
+  <style>
+    /* Estilos específicos para esta página */
+    .contenedor-pago {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .grupo-formulario {
+      margin-bottom: 20px;
+    }
+    .grupo-formulario label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+    .grupo-formulario input,
+    .grupo-formulario select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .btn-confirmar {
+      width: 100%;
+      padding: 15px;
+      background-color: #b3102e;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-confirmar:hover {
+      background-color: #910d25;
+    }
+    .resumen-pedido {
+      background-color: #f9f5ed;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    .resumen-pedido h3 {
+      margin-top: 0;
+      color: #694a2b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="imagenes/ola.exe.jpeg" class="logo" alt="Logo Genara Bakery">
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="carta.html">Productos</a>
+    <a href="equipo.html">Equipo</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <main class="contenedor-pago">
+    <h2>💳 Proceso de Pago</h2>
+
+    <!-- Resumen del pedido que viene del carrito -->
+    <div class="resumen-pedido">
+      <h3>Resumen del Pedido</h3>
+      <div id="lista-productos">Cargando datos...</div>
+      <div class="total-fina">
+        total a pagar: S/ <span id="total-pagar">0.00</span>
+      </div>
+    </div>
+
+    <!-- Formulario de pago -->
+    <form id="form-pago">
+      <div class="grupo-formulario">
+        <label for="metodo-pago">Método de pago</label>
+        <select id="metodo-pago" required>
+          <option value="">Selecciona una opción</option>
+          <option value="efectivo">Efectivo</option>
+          <option value="tarjeta">Tarjeta de crédito/débito</option>
+          <option value="yape">Yape</option>
+          <option value="plin">Plin</option>
+          <option value="transferencia">Transferencia bancaria</option>
+        </select>
+      </div>
+
+      <div class="grupo-formulario" id="campos-tarjeta" style="display: none;">
+        <label for="numero-tarjeta">Número de tarjeta</label>
+        <input type="text" id="numero-tarjeta" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+
+        <label for="vencimiento">Fecha de vencimiento</label>
+        <input type="text" id="vencimiento" placeholder="MM/AA" maxlength="5">
+
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" placeholder="XXX" maxlength="3">
+      </div>
+
+      <div class="grupo-formulario" id="campos-yape" style="display: none;">
+        <label for="numero-celular">Número de celular asociado</label>
+        <input type="tel" id="numero-celular" placeholder="999 999 999">
+      </div>
+
+      <div class="grupo-formulario">
+        <label for="nombre-cliente">Nombre completo</label>
+        <input type="text" id="nombre-cliente" required placeholder="Ingresa tu nombre">
+      </div>
+
+      <div class="grupo-formulario">
+        <label for="telefono">Teléfono de contacto</label>
+        <input type="tel" id="telefono" required placeholder="Ingresa tu número">
+      </div>
+
+      <button type="submit" class="btn-confirmar">✅ Confirmar y pagar</button>
+    </form>
+  </main>
+
+  <script>
+    // Mostrar campos adicionales según el método de pago seleccionado
+    const metodoPago = document.getElementById('metodo-pago');
+    const camposTarjeta = document.getElementById('campos-tarjeta');
+    const camposYape = document.getElementById('campos-yape');
+
+    metodoPago.addEventListener('change', () => {
+      // Ocultar todos los campos primero
+      camposTarjeta.style.display = 'none';
+      camposYape.style.display = 'none';
+
+      // Mostrar los correspondientes
+      if (metodoPago.value === 'tarjeta') {
+        camposTarjeta.style.display = 'block';
+      } else if (metodoPago.value === 'yape' || metodoPago.value === 'plin') {
+        camposYape.style.display = 'block';
+      }
+    });
+
+    // Cargar datos del carrito que se enviaron desde la página anterior
+    document.addEventListener('DOMContentLoaded', () => {
+      const datosCarrito = localStorage.getItem('datosCarrito');
+      if (datosCarrito) {
+        const carrito = JSON.parse(datosCarrito);
+        let productosTexto = '';
+        let total = 0;
+
+        carrito.forEach(item => {
+          productosTexto += `- ${item.nombre} x ${item.cantidad} : S/ ${(item.precio * item.cantidad).toFixed(2)}<br>`;
+          total += item.precio * item.cantidad;
+        });
+
+        document.getElementById('resumen-productos').innerHTML = productosTexto;
+        document.getElementById('total-pagar').textContent = total.toFixed(2);
+      }
+    });
+
+    // Enviar formulario
+    document.getElementById('form-pago').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const datos = {
+        metodoPago: document.getElementById('metodo-pago').value,
+        nombre: document.getElementById('nombre-cliente').value,
+        telefono: document.getElementById('telefono').value,
+        total: document.getElementById('total-pagar').textContent
+      };
+
+      // Aquí puedes agregar el código para guardar los datos o enviarlos al servidor
+      alert(`¡Pago confirmado!\nMétodo: ${datos.metodoPago}\nTotal: S/ ${datos.total}`);
+      
+      // Redirigir a una página de confirmación o volver al inicio
+      window.location.href = 'index.html';
+    });
+  </script>
+
+  <!-- FOOTER -->
+ <footer class="footer">
+   <div class="footer-contenido">
+
+    <!-- LOGO -->
+    <div class="footer-col">
+      <h2>Genara Bakery</h2>
+
+      <p>
+        Dedicados a crear postres artesanales llenos de sabor,
+        tradición y amor en cada detalle.
+      </p>
+
+      <div class="redes">
+        
+      </div>
+    </div>
+
+    <!-- MENÚ -->
+    <div class="footer-col">
+      <h3>Explorar</h3>
+
+      <a href="index.html">Inicio</a>
+      <a href="equipo.html">Nuestro equipo</a>
+      <a href="carta.html">Carta</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+
+    <!-- SERVICIOS -->
+    <div class="footer-col">
+      <h3>Servicios que ofrecemos</h3>
+
+      <a>Pedidos personalizados</a>
+      <a>Eventos</a>
+      <a>Postres artesanales</a>
+      <a >Delivery</a>
+    </div>
+
+    <!-- BOLETÍN -->
+    <div class="footer-col">
+      <h3>Boletín</h3>
+
+      <p>Recibe noticias y promociones especiales.</p>
+
+      <input type="email" placeholder="Tu correo">
+
+      <button>Suscribirse</button>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Genara Bakery - Todos los derechos reservados</p>
+
+    <a href="#">Volver arriba ↑</a>
+  </div>
+
+  </footer>
+
+<!-- JS -->
+<script src="js/equipo.js"></script>
+
+</body>
+</html>
+
+</body>
+</html>
